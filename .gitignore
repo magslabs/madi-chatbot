@@ -3,3 +3,27 @@ madi_chatbot_api/api/__pycache__
 madi_chatbot_api/chatbot/__pycache__
 madi_chatbot_api/madi_chatbot/__pycache__
 madi_chatbot_ui/node_modules
+
+# Logs
+madi_chatbot_ui/logs
+madi_chatbot_ui/*.log
+madi_chatbot_ui/npm-debug.log*
+madi_chatbot_ui/yarn-debug.log*
+madi_chatbot_ui/yarn-error.log*
+madi_chatbot_ui/pnpm-debug.log*
+madi_chatbot_ui/lerna-debug.log*
+
+madi_chatbot_ui/dist
+madi_chatbot_ui/dist-ssr
+madi_chatbot_ui/*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
