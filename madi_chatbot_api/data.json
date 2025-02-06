@@ -1,0 +1,955 @@
+{
+    "intents": [
+        {
+            "tag": "greetings-basic",
+            "patterns": ["Hi", "Hello", "Good day", "Hey there", "Hi, is this the MIS Office?"],
+            "responses": ["Hello! How can we assist you today?", "Good day! How may I help you?", "Hi there! Welcome to the MIS Office."]
+        },
+        {
+            "tag": "greetings-formal",
+            "patterns": ["Good morning", "Good afternoon", "Good evening", "Greetings", "May I speak with the MIS staff?"],
+            "responses": ["Good morning! How can I assist you?", "Good afternoon! What can we do for you?", "Good evening! How may we help?"]
+        },
+        {
+            "tag": "greetings-staff-only",
+            "patterns": ["Hello, I'm a faculty member. How do I access my account?", "I'm an admin, and I need help with the system.", "Can staff access the MIS services online?"],
+            "responses": ["Hello, faculty support is available! What do you need help with?", "Staff accounts require additional verification. Let me guide you.", "Yes, faculty and admin access is available. What assistance do you need?"]
+        },
+        {
+            "tag": "greetings-mis-director",
+            "patterns": ["Hello, I need to speak with the MIS Director.", "Can I talk to the MIS Director?", "Is the MIS Director available?"],
+            "responses": ["Hello! The MIS Director is available. How can I assist you?", "Sure, I can connect you with the MIS Director. What do you need help with?", "The MIS Director is here. How may we assist you?"]
+        },
+        {
+            "tag": "inquiry-school-system",
+            "patterns": ["Is this the MIS Office?", "Am I speaking with the IT support?", "Can someone help me with my account?", "I need assistance with the school system"],
+            "responses": ["Yes, this is the MIS Office. How can we help?", "You're in the right place! What do you need assistance with?", "Our IT support team is here. How can we assist you?"]
+        },
+        {
+            "tag": "follow-up-request",
+            "patterns": ["I'm following up on my request", "Can I check the status of my concern?", "I sent an email earlier about a system issue"],
+            "responses": ["Sure! Can you provide your request details?", "Let me check that for you. May I have your request ID?", "We’ll look into it. Can you provide more details?"]
+        },
+        {
+            "tag": "thank-you-generic",
+            "patterns": ["Thank you!", "Thanks for the help", "I appreciate it", "Much appreciated"],
+            "responses": ["You're welcome!", "Glad to assist!", "Anytime! Let us know if you need further help."]
+        },
+        {
+            "tag": "new-user-setup-student",
+            "patterns": ["I'm a new student, how do I access my school account?", "Hi, I'm new here. What do I need to set up?", "How do I log in for the first time?"],
+            "responses": ["Welcome! You can set up your account using your student ID. Need help?", "Hello! We’ll guide you through the setup. Do you have your credentials?", "Hi there! You can log in using your registered email. Let me know if you need assistance."]
+        },
+        {
+            "tag": "new-user-setup-employee",
+            "patterns": ["I'm a new employee, how do I access my work account?", "Hi, I'm new here. What do I need to set up?", "How do I log in for the first time?"],
+            "responses": ["Welcome! You can set up your account using your employee ID. Need help?", "Hello! We’ll guide you through the setup. Do you have your credentials?", "Hi there! You can log in using your registered email. Let me know if you need assistance."]
+        },
+        {
+            "tag": "system-webportal-down",
+            "patterns": ["Is the school portal down?", "I'm unable to log in. Is there an issue?", "The system isn't working for me, is it under maintenance?"],
+            "responses": ["We're checking on that. Can you share the exact issue?", "There might be scheduled maintenance. Let me confirm.", "Please try again in a few minutes. If the issue persists, let us know."]
+        },
+        {
+            "tag": "system-password-reset",
+            "patterns": ["I forgot my password. How can I reset it?", "My login isn’t working. Can I reset my credentials?", "How do I recover my school account password?"],
+            "responses": ["No worries! You can reset your password through the school portal.", "We can assist with that. Have you tried the ‘Forgot Password’ option?", "Please provide your student ID, and we’ll guide you on resetting your credentials."]
+        },
+        {
+            "tag": "system-technical-issue",
+            "patterns": ["My account has been locked. What should I do?", "I'm getting an error when I try to access my profile.", "There's a problem with my student portal login."],
+            "responses": ["We’ll check that for you. Can you share the error message?", "Your account might need reactivation. Let us verify your details.", "Please wait while we look into this. Can you provide more details about the issue?"]
+        },
+        {
+            "tag": "grades-inquiry",
+            "patterns": ["How can I check my grades?", "Where can I view my final grades?", "Is my grade available online?", "Can I access my grades through the portal?", "How do I see my grades?"],
+            "responses": ["You can check your grades through the student portal. Let me know if you need assistance logging in.", "Final grades are available in the student portal. Please log in to access them.", "Yes, your grades are accessible online. Do you need help navigating the system?"]
+        },
+        {
+            "tag": "grades-missing",
+            "patterns": ["Why are my grades not showing?", "My grades are missing from the portal.", "I can't see my grades, what should I do?", "Some of my subjects have no grades listed.", "Why is my grade not yet posted?"],
+            "responses": ["If your grades are missing, it may still be under processing. Please check again later or contact your professor.", "Some grades may take time to be updated. Have you checked with your instructor?", "Grades are usually posted by the registrar. If they are missing, please verify with your department."]
+        },
+        {
+            "tag": "grades-incorrect",
+            "patterns": ["I think my grade is incorrect.", "There is a mistake in my grade.", "My grade does not match what I expected.", "I need to verify if my grade was recorded correctly.", "Can I request for a grade review?"],
+            "responses": ["If you believe there is an error in your grade, please reach out to your instructor or department for verification.", "You may file a grade verification request through the registrar's office.", "Grade corrections are handled by the faculty. Please contact your professor for confirmation."]
+        },
+        {
+            "tag": "grades-appeal",
+            "patterns": ["How can I appeal my grade?", "I want to request a grade reconsideration.", "What is the process for grade appeal?", "Can I contest my final grade?", "How do I request a re-evaluation of my grade?"],
+            "responses": ["To appeal your grade, you need to submit a request to your professor or department. Would you like guidance on the process?", "Grade appeals typically require official documentation. Please check with the registrar for the process.", "You may need to provide valid reasons for a grade appeal. Do you need assistance with the requirements?"]
+        },
+        {
+            "tag": "grades-delayed",
+            "patterns": ["When will my grades be available?", "Why are my grades delayed?", "Has the professor submitted the grades yet?", "How long does it take for grades to be posted?", "Why is my grade taking so long to appear?"],
+            "responses": ["Grade postings depend on the professor's submission. You may check with your instructor for updates.", "There may be a delay in grade processing. Please be patient, or contact the department for details.", "Final grades are usually posted after the grading period. Have you checked the latest announcements?"]
+        },
+        {
+            "tag": "grades-portal-issue",
+            "patterns": ["I'm unable to access my grades online.", "The portal is not loading my grades.", "I can't log in to check my grades.", "Is the grading system down?", "I keep getting an error when I try to view my grades."],
+            "responses": ["Please try clearing your browser cache or using a different device. If the issue persists, let us know.", "There may be temporary system maintenance. Please try again later.", "If you are unable to log in, please reset your password or contact MIS support."]
+        },
+        {
+            "tag": "grades-printed-copy",
+            "patterns": ["How do I request an official copy of my grades?", "Can I get a printed copy of my transcript?", "Where can I request a grade certificate?", "I need a hard copy of my grades.", "How long does it take to get a printed grade report?"],
+            "responses": ["You can request an official grade transcript from the registrar's office.", "Printed grade reports may require processing time. Please check with the registrar.", "To request a printed copy, submit a request through the student portal or visit the registrar’s office."]
+        },
+        {
+            "tag": "grades-clarification",
+            "patterns": ["What does an INC grade mean?", "What happens if I get an incomplete?", "Can I still pass if I have an INC?", "How do I remove an INC grade?", "What should I do if I have an incomplete grade?"],
+            "responses": ["An INC (Incomplete) means you have pending requirements. You may need to coordinate with your professor to complete them.", "You can complete an INC by fulfilling the remaining coursework. Please check with your instructor for details.", "To remove an INC grade, you must submit the required work within the allowed period. Contact your professor for guidance."]
+        },
+        {
+            "tag": "grades-failing",
+            "patterns": ["What happens if I fail a subject?", "Can I retake a failed course?", "How do I enroll in a remedial class?", "What are my options if I fail?", "Can I request a grade reconsideration if I fail?"],
+            "responses": ["If you fail a subject, you may have the option to retake it next term. Please check with your department.", "Retaking a course is possible for failed subjects. You will need to re-enroll in the next semester.", "For grade reconsideration, you may need to submit an appeal with valid reasons to your professor or department."]
+        },
+        {
+            "tag": "grades-requirements",
+            "patterns": ["What are the grade requirements for graduation?", "Do I need a specific GWA to graduate?", "What is the minimum passing grade?", "How do I know if I’m eligible to graduate?", "Where can I check my academic standing?"],
+            "responses": ["Graduation requirements vary by program. Please consult your academic adviser or the registrar’s office.", "The minimum GWA required depends on your course. You can check the student handbook or ask your department.", "Your academic standing is available in the student portal. If you need help, let us know!"]
+        },
+        {
+            "tag": "grades-removal-exam",
+            "patterns": ["Can I take a removal exam for a low grade?", "What is a removal exam?", "How do I qualify for a grade removal exam?", "When is the removal exam schedule?", "Can I improve my grade through a removal exam?"],
+            "responses": ["A removal exam is an opportunity to improve a low grade. You need to check if you’re eligible with your professor.", "To qualify for a removal exam, you usually need a grade close to passing. Please confirm with your instructor.", "Removal exam schedules are announced by the department. Keep an eye on official announcements."]
+        },
+        {
+            "tag": "grades-withheld",
+            "patterns": ["Why are my grades withheld?", "I can't see my grades because of unpaid fees.", "What should I do if my grades are on hold?", "Can I still get my grades if I have outstanding balances?", "How do I settle my account to access my grades?"],
+            "responses": ["Grades may be withheld due to outstanding balances. You may need to settle payments with the finance office.", "If your grades are on hold, please check with the accounting department for payment details.", "Once your outstanding fees are cleared, your grades should be accessible. Let us know if you need assistance."]
+        },
+        {
+            "tag": "grades_delay_inquiry",
+            "patterns": ["Why are my grades taking so long to be posted?", "When will the grades be available?", "The grades are delayed. What's happening?", "I haven't seen my grades yet. When will they be posted?"],
+            "responses": ["We understand your concern. The grades are currently being processed and will be posted as soon as possible.", "The grading process is still ongoing. Please check back later for updates.", "Grades are being finalized by the faculty. We appreciate your patience!", "The professors are still reviewing and finalizing the grades. Thank you for waiting."]
+        },
+        {
+            "tag": "grades_delay_complaint",
+            "patterns": ["This is taking too long! Why are the grades not posted yet?", "It's been weeks, and my grades are still not available!", "The delay in posting grades is unacceptable!", "Why does it take so long to release the grades?"],
+            "responses": ["We apologize for the delay. The faculty is working hard to ensure accuracy before posting the grades.", "We understand your frustration. The grading process involves careful review to ensure fairness.", "We sincerely apologize for the wait. The grades are being verified and will be available soon.", "We are doing our best to expedite the process. Thank you for your patience!"]
+        },
+        {
+            "tag": "grades_follow_up",
+            "patterns": ["Can you give me an update on when my grades will be available?", "Is there any update regarding the grades?", "Has the grading been completed yet?", "Can you check if my grades have been posted?"],
+            "responses": ["The grading process is still ongoing, but we will notify students once the grades are available.", "Faculty members are finalizing the grades. Please keep an eye on your student portal for updates.", "We're checking on the status of the grades. Please stay tuned for further announcements.", "Your grades will be posted as soon as they are finalized. Thank you for your patience!"]
+        },
+        {
+            "tag": "grades_escalation",
+            "patterns": ["I need to talk to someone about the delayed grades.", "Who can I contact regarding the grades?", "I want to escalate this issue about the grading delay.", "Where can I file a complaint about my grades taking too long?"],
+            "responses": ["If you have concerns, you may reach out to the registrar's office or your professor directly.", "For grade-related concerns, please contact the academic office or your department head.", "You can escalate your concern by visiting the student affairs office or sending an email to the academic department.", "If you believe there is an issue, please contact your professor or the registrar’s office for further assistance."]
+        },
+        {
+            "tag": "grades-clarification-inp",
+            "patterns": ["What does INP mean?", "I got an INP grade, what should I do?", "Can I still complete my INP grade?", "How long do I have to complete an INP?", "Does INP mean I failed?"],
+            "responses": ["INP stands for 'Incomplete.' It means you have pending coursework. You must complete the requirements within the allowed period.", "To complete an INP, you need to coordinate with your professor and submit the missing requirements.", "An INP is not a failing grade, but it must be completed before the deadline to avoid being converted to a failing grade."]
+        },
+        {
+            "tag": "grades-clarification-pas",
+            "patterns": ["What does PAS mean?", "Does PAS mean I passed the subject?", "Is PAS a good grade?", "What is the equivalent of PAS in the grading system?", "Can I improve my PAS grade?"],
+            "responses": ["PAS means 'Passed.' You have successfully met the requirements for the subject.", "Yes, PAS indicates that you passed the course, but it does not specify a numerical grade.", "PAS is equivalent to a passing mark. If you want to improve your grade, you may need to retake the subject, depending on school policies."]
+        },
+        {
+            "tag": "grades-clarification-f",
+            "patterns": ["What does F mean in my grades?", "I got an F, does it mean I failed?", "Can I retake a subject if I got an F?", "What happens if I receive an F?", "How can I remove an F grade?"],
+            "responses": ["F stands for 'Fail.' You did not meet the minimum requirements to pass the subject.", "If you receive an F, you may need to retake the subject in the next term.", "An F grade affects your GWA. You can improve it by enrolling in a remedial or retake course.", "Failing a subject may require you to consult with your academic adviser for the next steps."]
+        },
+        {
+            "tag": "grades-clarification-od",
+            "patterns": ["What does OD mean?", "I got OD in my grades, what does it mean?", "Is OD the same as failing?", "Can I re-enroll if I have an OD?", "How do I request to re-enroll after OD?"],
+            "responses": ["OD stands for 'Officially Dropped.' It means you withdrew from the course following the official drop procedure.", "An OD grade does not affect your GWA, but you will need to re-enroll if the course is required for your program.", "If you received an OD, you can retake the subject in the next term without penalties.", "You may check with the registrar for the re-enrollment process after receiving an OD."]
+        },
+        {
+            "tag": "grades-clarification-drp",
+            "patterns": ["What does DRP mean?", "How is DRP different from OD?", "I got DRP in my grades, what should I do?", "Does DRP affect my GWA?", "Can I retake a subject if I have DRP?"],
+            "responses": ["DRP stands for 'Dropped.' It means you stopped attending the course without completing the official drop process.", "Unlike OD (Officially Dropped), DRP may have academic consequences, depending on school policies.", "If you receive a DRP, you may need to consult with your department to check if it affects your GWA.", "Yes, you can retake a DRP subject, but you should follow the proper procedures to avoid issues in the future."]
+        },
+        {
+            "tag": "tuition_fee_inquiry_tertiary",
+            "patterns": ["How much is the tuition fee for college?", "What are the tuition rates for graduate school?", "Can you provide the tuition fees for post-graduate studies?", "Where can I check my tuition balance for my college program?"],
+            "responses": ["Tuition fees for tertiary education vary depending on the program and year level. Please visit the finance office or check the official website for a breakdown.", "Graduate school tuition rates depend on the course and number of units enrolled. Kindly check with the finance office for details.", "Post-graduate tuition rates differ based on the program. You may visit our website or consult the finance office for specific fees.", "To check your tuition balance, please log in to your student portal or inquire at the finance office."]
+        },
+        {
+            "tag": "tuition_fee_inquiry_basic_education",
+            "patterns": ["How much is the tuition fee for elementary?", "What are the school fees for high school?", "Can you provide the tuition rates for Basic Education?", "Where can I check my child’s tuition balance?"],
+            "responses": ["Tuition fees for Basic Education depend on the grade level. You may check the school's official website or visit the finance office.", "Elementary and high school tuition fees vary per level. Please contact our admissions or finance office for details.", "Basic Education tuition rates and other fees are listed in the finance office. You may also check the student portal for updates.", "To check your child’s tuition balance, please log in to the parent portal or inquire at the finance office."]
+        },
+        {
+            "tag": "payment_methods_tertiary",
+            "patterns": ["How can I pay my college tuition fee?", "What are the available payment methods for graduate school?", "Do you accept online payments for post-graduate studies?", "Where can I pay my school fees for tertiary education?"],
+            "responses": ["You can pay your college tuition fees through bank transfer, online payment, or at the finance office. Visit our website for details.", "Graduate school students may settle fees via online banking, over-the-counter deposits, or the school's cashier.", "Yes, online payments are accepted for post-graduate studies. Please visit our finance page for payment instructions.", "Tertiary students can pay their fees at the school's finance office or through accredited payment centers."]
+        },
+        {
+            "tag": "payment_methods_basic_education",
+            "patterns": ["How can I pay for my child’s tuition?", "What payment methods are available for elementary and high school?", "Can I pay the tuition fee online for Basic Education?", "Where can I settle my child’s school fees?"],
+            "responses": ["Parents can pay tuition fees via online banking, over-the-counter bank deposits, or at the school’s finance office.", "We accept payments through various channels, including cash, check, and electronic fund transfers. Please visit our website for details.", "Yes, online payment options are available for Basic Education students. Kindly check the finance office for payment instructions.", "School fees for elementary and high school can be settled at the school’s cashier or through accredited payment centers."]
+        },
+        {
+            "tag": "scholarship_inquiries_tertiary",
+            "patterns": ["Are there scholarships available for college students?", "How can I apply for a scholarship in graduate school?", "What are the requirements for scholarships in post-graduate programs?", "Does the university offer financial aid for college students?"],
+            "responses": ["Yes, we offer various scholarships for college students. Please visit the scholarship office or check our website for eligibility and application details.", "Scholarships for graduate school are available based on merit and need. Kindly check with the academic office for requirements.", "Post-graduate scholarships depend on research grants and funding availability. Contact the scholarship office for more details.", "Financial aid programs are available for eligible college students. Please reach out to the student support services for guidance."]
+        },
+        {
+            "tag": "scholarship_inquiries_basic_education",
+            "patterns": ["Does the school offer scholarships for elementary students?", "Are there financial aid programs for high school students?", "How can I apply for a scholarship for my child?", "What are the requirements for Basic Education scholarships?"],
+            "responses": ["Yes, we offer scholarships for elementary and high school students. Please inquire at the finance office or visit our website.", "Financial aid programs are available for deserving students in Basic Education. Please check the scholarship office for eligibility.", "To apply for a scholarship for your child, kindly visit the admissions office and submit the necessary requirements.", "Scholarship requirements for Basic Education vary. Please contact the school's finance or scholarship office for detailed information."]
+        },
+        {
+            "tag": "payment_deadlines_tertiary",
+            "patterns": ["When is the deadline for tuition payment for college?", "What happens if I miss the payment deadline for graduate school?", "Is there a late payment fee for post-graduate programs?", "Can I request an extension for my college tuition payment?"],
+            "responses": ["Payment deadlines are announced at the start of each semester. Please check the school calendar or finance office for details.", "If you miss the payment deadline for graduate school, late fees may apply. Please contact the finance office for assistance.", "Yes, late payment fees may be charged for post-graduate programs. It’s best to settle your fees before the due date.", "If you need an extension, you may request one through the finance office, subject to approval."]
+        },
+        {
+            "tag": "payment_deadlines_basic_education",
+            "patterns": ["What is the deadline for tuition payments in elementary and high school?", "Can I still pay my child’s tuition after the deadline?", "Is there a late payment fee for Basic Education?", "Who can I talk to about payment extensions for my child’s school fees?"],
+            "responses": ["Tuition payment deadlines for Basic Education are set at the beginning of the school year. Please check with the finance office for details.", "Late payments for elementary and high school may be accommodated depending on the school's policy. Kindly coordinate with the finance office.", "Yes, late payment fees may apply for Basic Education students. Please inquire at the finance office for further details.", "For payment extensions, please reach out to the finance office or send a request through the parent portal."]
+        },
+        {
+            "tag": "refund_policy_tertiary",
+            "patterns": ["Can I get a refund if I withdraw from my college course?", "What is the refund policy for tuition fees in graduate school?", "How long does it take to process a refund for post-graduate studies?", "Am I eligible for a refund if I drop my subjects in college?"],
+            "responses": ["Refunds are processed based on the school's refund policy. Please visit the finance office for more details.", "Graduate school refunds are subject to the institution's guidelines. Kindly check the finance office for eligibility.", "Refund processing times for post-graduate studies vary. Please coordinate with the finance office for updates.", "Eligibility for refunds depends on the withdrawal period and school policies. Kindly consult the finance office."]
+        },
+        {
+            "tag": "refund_policy_basic_education",
+            "patterns": ["Can I get a refund if I withdraw my child from school?", "What is the refund policy for Basic Education tuition fees?", "How long does it take to process a refund for elementary and high school?", "Am I eligible for a refund if my child transfers to another school?"],
+            "responses": ["Refund policies for Basic Education vary. Please visit the finance office for details on eligibility and processing.", "Refunds for elementary and high school students depend on the timing of withdrawal. Check with the finance office for the exact policy.", "Processing time for refunds may take a few weeks. Please coordinate with the finance office for updates.", "Eligibility for refunds depends on when the student withdraws. Kindly consult the finance office for specific guidelines."]
+        },
+        {
+            "tag": "tuition_fee_inquiry_tertiary",
+            "patterns": ["How much is the tuition fee for college?", "What are the tuition rates for graduate school?", "Can you provide the tuition fees for post-graduate studies?", "Where can I check my tuition balance for my college program?"],
+            "responses": ["Tuition fees for tertiary education vary depending on the program and year level. Please visit the finance office or check the official website for a breakdown.", "Graduate school tuition rates depend on the course and number of units enrolled. Kindly check with the finance office for details.", "Post-graduate tuition rates differ based on the program. You may visit our website or consult the finance office for specific fees.", "To check your tuition balance, please log in to your student portal or inquire at the finance office."]
+        },
+        {
+            "tag": "tuition_fee_inquiry_basic_education",
+            "patterns": ["How much is the tuition fee for elementary?", "What are the school fees for high school?", "Can you provide the tuition rates for Basic Education?", "Where can I check my child’s tuition balance?"],
+            "responses": ["Tuition fees for Basic Education depend on the grade level. You may check the school's official website or visit the finance office.", "Elementary and high school tuition fees vary per level. Please contact our admissions or finance office for details.", "Basic Education tuition rates and other fees are listed in the finance office. You may also check the student portal for updates.", "To check your child’s tuition balance, please log in to the parent portal or inquire at the finance office."]
+        },
+        {
+            "tag": "payment_methods_tertiary",
+            "patterns": ["How can I pay my college tuition fee?", "What are the available payment methods for graduate school?", "Do you accept online payments for post-graduate studies?", "Where can I pay my school fees for tertiary education?"],
+            "responses": ["You can pay your college tuition fees through bank transfer, online payment, or at the finance office. Visit our website for details.", "Graduate school students may settle fees via online banking, over-the-counter deposits, or the school's cashier.", "Yes, online payments are accepted for post-graduate studies. Please visit our finance page for payment instructions.", "Tertiary students can pay their fees at the school's finance office or through accredited payment centers."]
+        },
+        {
+            "tag": "payment_methods_basic_education",
+            "patterns": ["How can I pay for my child’s tuition?", "What payment methods are available for elementary and high school?", "Can I pay the tuition fee online for Basic Education?", "Where can I settle my child’s school fees?"],
+            "responses": ["Parents can pay tuition fees via online banking, over-the-counter bank deposits, or at the school’s finance office.", "We accept payments through various channels, including cash, check, and electronic fund transfers. Please visit our website for details.", "Yes, online payment options are available for Basic Education students. Kindly check the finance office for payment instructions.", "School fees for elementary and high school can be settled at the school’s cashier or through accredited payment centers."]
+        },
+        {
+            "tag": "scholarship_inquiries_tertiary",
+            "patterns": ["Are there scholarships available for college students?", "How can I apply for a scholarship in graduate school?", "What are the requirements for scholarships in post-graduate programs?", "Does the university offer financial aid for college students?"],
+            "responses": ["Yes, we offer various scholarships for college students. Please visit the scholarship office or check our website for eligibility and application details.", "Scholarships for graduate school are available based on merit and need. Kindly check with the academic office for requirements.", "Post-graduate scholarships depend on research grants and funding availability. Contact the scholarship office for more details.", "Financial aid programs are available for eligible college students. Please reach out to the student support services for guidance."]
+        },
+        {
+            "tag": "scholarship_inquiries_basic_education",
+            "patterns": ["Does the school offer scholarships for elementary students?", "Are there financial aid programs for high school students?", "How can I apply for a scholarship for my child?", "What are the requirements for Basic Education scholarships?"],
+            "responses": ["Yes, we offer scholarships for elementary and high school students. Please inquire at the finance office or visit our website.", "Financial aid programs are available for deserving students in Basic Education. Please check the scholarship office for eligibility.", "To apply for a scholarship for your child, kindly visit the admissions office and submit the necessary requirements.", "Scholarship requirements for Basic Education vary. Please contact the school's finance or scholarship office for detailed information."]
+        },
+        {
+            "tag": "payment_deadlines_tertiary",
+            "patterns": ["When is the deadline for tuition payment for college?", "What happens if I miss the payment deadline for graduate school?", "Is there a late payment fee for post-graduate programs?", "Can I request an extension for my college tuition payment?"],
+            "responses": ["Payment deadlines are announced at the start of each semester. Please check the school calendar or finance office for details.", "If you miss the payment deadline for graduate school, late fees may apply. Please contact the finance office for assistance.", "Yes, late payment fees may be charged for post-graduate programs. It’s best to settle your fees before the due date.", "If you need an extension, you may request one through the finance office, subject to approval."]
+        },
+        {
+            "tag": "payment_deadlines_basic_education",
+            "patterns": ["What is the deadline for tuition payments in elementary and high school?", "Can I still pay my child’s tuition after the deadline?", "Is there a late payment fee for Basic Education?", "Who can I talk to about payment extensions for my child’s school fees?"],
+            "responses": ["Tuition payment deadlines for Basic Education are set at the beginning of the school year. Please check with the finance office for details.", "Late payments for elementary and high school may be accommodated depending on the school's policy. Kindly coordinate with the finance office.", "Yes, late payment fees may apply for Basic Education students. Please inquire at the finance office for further details.", "For payment extensions, please reach out to the finance office or send a request through the parent portal."]
+        },
+        {
+            "tag": "refund_policy_tertiary",
+            "patterns": ["Can I get a refund if I withdraw from my college course?", "What is the refund policy for tuition fees in graduate school?", "How long does it take to process a refund for post-graduate studies?", "Am I eligible for a refund if I drop my subjects in college?"],
+            "responses": ["Refunds are processed based on the school's refund policy. Please visit the finance office for more details.", "Graduate school refunds are subject to the institution's guidelines. Kindly check the finance office for eligibility.", "Refund processing times for post-graduate studies vary. Please coordinate with the finance office for updates.", "Eligibility for refunds depends on the withdrawal period and school policies. Kindly consult the finance office."]
+        },
+        {
+            "tag": "refund_policy_basic_education",
+            "patterns": ["Can I get a refund if I withdraw my child from school?", "What is the refund policy for Basic Education tuition fees?", "How long does it take to process a refund for elementary and high school?", "Am I eligible for a refund if my child transfers to another school?"],
+            "responses": ["Refund policies for Basic Education vary. Please visit the finance office for details on eligibility and processing.", "Refunds for elementary and high school students depend on the timing of withdrawal. Check with the finance office for the exact policy.", "Processing time for refunds may take a few weeks. Please coordinate with the finance office for updates.", "Eligibility for refunds depends on when the student withdraws. Kindly consult the finance office for specific guidelines."]
+        },
+        {
+            "tag": "installment_plan_tertiary",
+            "patterns": ["Is there an installment plan for tuition in college?", "Can I pay my graduate school fees in installments?", "Are post-graduate students allowed to pay tuition by installment?", "How does the installment plan work for tertiary education?"],
+            "responses": ["Yes, installment plans are available for college students. Please visit the finance office for the terms and conditions.", "Graduate school students may opt for installment payments. Kindly inquire at the finance office for the available options.", "Post-graduate students can pay in installments based on the school's payment schedule. Contact the finance office for further details.", "Installment plans for tertiary education allow students to pay in multiple tranches. Please check the official guidelines from the finance office."]
+        },
+        {
+            "tag": "installment_plan_basic_education",
+            "patterns": ["Is there an installment plan for elementary and high school tuition?", "Can I pay my child’s school fees in installments?", "Are parents allowed to settle tuition in multiple payments?", "How does the installment plan work for Basic Education?"],
+            "responses": ["Yes, installment plans are available for Basic Education students. Please visit the finance office for details.", "Parents can opt for an installment plan to pay school fees gradually. Contact the finance office for payment schedules.", "Elementary and high school tuition can be paid in installments. Please inquire with the finance office for the payment structure.", "Installment plans are available to help parents manage school fees. Kindly check the finance office for available options."]
+        },
+        {
+            "tag": "penalties_and_fees_tertiary",
+            "patterns": ["What are the penalties for late tuition payments in college?", "Are there additional fees for late graduate school payments?", "What happens if I fail to pay my post-graduate tuition on time?", "Do I need to pay a fine if I miss my tuition deadline for tertiary education?"],
+            "responses": ["Late tuition payments in college may incur penalties. Please visit the finance office for specific charges.", "Graduate school students who fail to meet the deadline may be charged additional fees. Check the finance office for details.", "Failure to pay post-graduate tuition on time may result in penalties or restrictions on enrollment. Please contact the finance office.", "Yes, late payments for tertiary education may have additional fees. It’s best to settle your tuition before the deadline."]
+        },
+        {
+            "tag": "penalties_and_fees_basic_education",
+            "patterns": ["What are the penalties for late tuition payments in elementary and high school?", "Are there fines if I fail to pay my child’s school fees on time?", "What happens if we miss the payment deadline for Basic Education?", "Is there a grace period for late payments in Basic Education?"],
+            "responses": ["Late tuition payments in Basic Education may be subject to penalties. Please visit the finance office for details.", "Parents who fail to pay school fees on time may be charged late fees. Check the school’s payment policies for specifics.", "Missing the payment deadline may result in additional fees or restrictions. Kindly coordinate with the finance office for assistance.", "There may be a grace period for late payments. Please contact the finance office to confirm."]
+        },
+        {
+            "tag": "financial_assistance_tertiary",
+            "patterns": ["Are there financial assistance programs for college students?", "How can I apply for financial aid in graduate school?", "Does the school offer student loans for post-graduate students?", "What financial support is available for tertiary education?"],
+            "responses": ["Yes, financial assistance programs are available for qualified college students. Please check with the finance office.", "Graduate students may apply for financial aid programs based on eligibility. Visit the finance office for details.", "Some post-graduate programs offer financial aid or student loan options. Contact the finance office for available support.", "Various financial assistance options are available for tertiary education. Kindly inquire at the finance office for more information."]
+        },
+        {
+            "tag": "financial_assistance_basic_education",
+            "patterns": ["Are there financial assistance programs for elementary and high school students?", "How can I apply for financial aid for my child?", "Does the school offer discounts or grants for Basic Education?", "What financial support is available for students in K-12?"],
+            "responses": ["Yes, financial assistance programs are available for Basic Education students. Please visit the finance office for eligibility requirements.", "Parents can apply for financial aid programs by submitting the necessary documents to the finance office.", "The school offers discounts, scholarships, and grants for qualified Basic Education students. Check with the finance office for details.", "There are financial support programs available for K-12 students. Please reach out to the finance office for more information."]
+        },
+        {
+            "tag": "bank_partners_tertiary",
+            "patterns": ["Which banks are partnered with the school for tuition payments?", "Where can I deposit my college tuition?", "What are the accredited banks for graduate school fee payments?", "Are there bank payment options for post-graduate tuition?"],
+            "responses": ["The school has partnered with several banks for tuition payments. Please check our website or finance office for the list.", "College tuition payments can be made through accredited banks. Visit the finance office for bank details.", "Graduate school tuition can be paid through partner banks and online platforms. Kindly confirm with the finance office.", "Yes, post-graduate students can pay tuition through bank deposits. Check the finance office for payment instructions."]
+        },
+        {
+            "tag": "bank_partners_basic_education",
+            "patterns": ["Which banks can I use to pay my child’s school fees?", "Are there accredited banks for elementary and high school tuition payments?", "Can I deposit my child’s tuition through a bank?", "What bank options are available for Basic Education fee payments?"],
+            "responses": ["The school has partnered with several banks for tuition payments. Please visit the finance office for a list of accredited banks.", "Elementary and high school tuition can be paid through our partner banks. Check our website or finance office for details.", "Yes, parents can deposit their child’s tuition through accredited banks. Please verify the bank details with the finance office.", "Bank payment options are available for Basic Education tuition. Kindly check with the finance office for instructions."]
+        },
+        {
+            "tag": "miscellaneous_fees_tertiary",
+            "patterns": ["What are the miscellaneous fees for college students?", "Are there additional fees aside from tuition in graduate school?", "Do post-graduate students need to pay extra fees?", "Can I get a breakdown of the miscellaneous fees for tertiary education?"],
+            "responses": ["Miscellaneous fees cover various services such as library, laboratory, and student activities. Please check with the finance office for a detailed breakdown.", "Graduate school students may be required to pay additional fees for facilities and resources. Kindly inquire at the finance office.", "Yes, post-graduate students may have extra fees for research and administrative purposes. Contact the finance office for specifics.", "A complete breakdown of miscellaneous fees for tertiary education is available at the finance office or student portal."]
+        },
+        {
+            "tag": "miscellaneous_fees_basic_education",
+            "patterns": ["What are the miscellaneous fees for elementary and high school students?", "Are there extra charges aside from tuition in Basic Education?", "What additional fees should I expect for my child’s schooling?", "Can I get a list of the miscellaneous fees for K-12?"],
+            "responses": ["Miscellaneous fees include charges for books, school activities, and other services. Please check with the finance office for a detailed breakdown.", "Aside from tuition, there may be additional charges for materials, uniforms, and extracurricular activities.", "Parents should expect extra fees for school supplies, laboratory use, and special programs. Kindly visit the finance office for details.", "A full list of miscellaneous fees for Basic Education is available at the finance office or school website."]
+        },
+        
+        {
+            "tag": "course_info",
+            "patterns": ["Tell me about IT courses", "What IT programs are available?", "IT degree details"],
+            "responses": ["We offer various IT courses including software development, cybersecurity, and data science. Each program is designed to give you practical, industry-relevant skills."]
+        },
+        {
+            "tag": "registration",
+            "patterns": ["How do I register for classes?", "Class registration process", "Sign up for courses"],
+            "responses": ["To register, log into the student portal and go to 'Course Registration'. Follow the prompts to select your desired courses."]
+        },
+        {
+            "tag": "campus_facilities",
+            "patterns": ["What facilities are on campus?", "Tell me about computer labs", "Library hours"],
+            "responses": ["Our campus has state-of-the-art computer labs, a 24/7 library, sports facilities, and various study areas. Wi-Fi is available throughout the campus."]
+        },
+        {
+            "tag": "tuition",
+            "patterns": ["How much is tuition?", "Tuition fees", "Cost of attendance"],
+            "responses": ["Tuition varies by program. Please check our website or contact the financial aid office for the most up-to-date information."]
+        },
+        {
+            "tag": "deadlines",
+            "patterns": ["When are assignment deadlines?", "Due dates for projects", "Submission deadlines"],
+            "responses": ["Assignment deadlines are set by individual instructors. Please check your course syllabus or the online learning platform for specific due dates."]
+        },
+        {
+            "tag": "exam_schedule",
+            "patterns": ["When are the exams?", "Exam timetable", "Final exam schedule"],
+            "responses": ["The exam schedule is usually published a month before the exam period. You can find it on the university website or student portal."]
+        },
+        {
+            "tag": "office_hours",
+            "patterns": ["Professor office hours", "When can I meet my instructor?", "Faculty consultation times"],
+            "responses": ["Office hours vary by instructor. Check your course syllabus or contact your professor directly for their specific office hours."]
+        },
+        {
+            "tag": "it_support",
+            "patterns": ["I need IT help", "Computer problems", "Tech support"],
+            "responses": ["For IT support, please visit the IT help desk in the library or submit a ticket through our online support system."]
+        },
+        {
+            "tag": "wifi_access",
+            "patterns": ["How do I connect to WiFi?", "Campus internet access", "WiFi password"],
+            "responses": ["To connect to campus WiFi, select the network 'Campus-Net' and log in with your student credentials."]
+        },
+        {
+            "tag": "parking",
+            "patterns": ["Where can I park?", "Parking permits", "Campus parking info"],
+            "responses": ["Student parking is available in lots A, B, and C. You'll need to purchase a parking permit from the campus security office."]
+        },
+        {
+            "tag": "career_services",
+            "patterns": ["Job placement help", "Career advice", "Internship opportunities"],
+            "responses": ["Our career services office offers resume reviews, mock interviews, and job fairs. Visit them in the Student Center or check their online resources."]
+        },
+        {
+            "tag": "library_resources",
+            "patterns": ["How to access online journals?", "Library database", "Research resources"],
+            "responses": ["You can access online journals and databases through the library website. Log in with your student ID to use these resources off-campus."]
+        },
+        {
+            "tag": "student_id",
+            "patterns": ["How do I get my student ID?", "Lost student card", "ID card services"],
+            "responses": ["You can get your student ID at the card office in the Admin Building. If you've lost your card, report it immediately and request a replacement."]
+        },
+        {
+            "tag": "clubs_and_societies",
+            "patterns": ["What student clubs are there?", "How to join a society?", "Extracurricular activities"],
+            "responses": ["We have numerous clubs and societies ranging from academic to recreational. Check the student life section on our website for a full list and joining information."]
+        },
+        {
+            "tag": "accommodation",
+            "patterns": ["On-campus housing", "Dormitory information", "How to apply for residence"],
+            "responses": ["We offer on-campus housing in several dormitories. Applications open in spring for the following academic year. Visit the housing office for more details."]
+        },
+        {
+            "tag": "health_services",
+            "patterns": ["Campus clinic hours", "Health insurance", "Medical services for students"],
+            "responses": ["The campus health clinic is open weekdays from 9 AM to 5 PM. All enrolled students are covered by basic health insurance. Visit the clinic for more information."]
+        },
+        {
+            "tag": "graduation",
+            "patterns": ["Graduation requirements", "How to apply for graduation", "Commencement ceremony info"],
+            "responses": ["To graduate, ensure you've completed all required courses and credit hours. Apply for graduation through the student portal. Commencement details are sent via email to eligible students."]
+        },
+        {
+            "tag": "scholarship_info",
+            "patterns": ["How to apply for scholarships?", "Scholarship opportunities", "Financial aid details"],
+            "responses": ["We offer multiple scholarships based on academic merit, financial need, and specific talents. Check the financial aid office website for detailed information and application processes."]
+        },
+        {
+            "tag": "international_student",
+            "patterns": ["Information for international students", "Visa requirements", "International student support"],
+            "responses": ["Our international student office provides comprehensive support including visa guidance, cultural integration programs, and academic counseling."]
+        },
+        {
+            "tag": "research_opportunities",
+            "patterns": ["Undergraduate research", "How to join research projects", "Research funding"],
+            "responses": ["Undergraduate students can participate in research through faculty-led projects, summer research programs, and departmental research grants."]
+        },
+        {
+            "tag": "online_learning",
+            "patterns": ["Online course options", "Distance learning", "Virtual classroom access"],
+            "responses": ["We offer hybrid and fully online courses. Access your online classes through our learning management system using your student credentials."]
+        },
+        {
+            "tag": "academic_advising",
+            "patterns": ["How to schedule advisor meeting", "Academic counseling", "Course selection help"],
+            "responses": ["Academic advisors are available for one-on-one consultations. Book an appointment through the student portal or by visiting the advising center."]
+        },
+        {
+            "tag": "transfer_credits",
+            "patterns": ["Transfer credit policy", "How to transfer credits", "Credit evaluation"],
+            "responses": ["Our admissions office evaluates transfer credits on a case-by-case basis. Submit your previous institution's transcripts for a comprehensive review."]
+        },
+        {
+            "tag": "student_exchange",
+            "patterns": ["Study abroad programs", "International exchange", "Semester exchange opportunities"],
+            "responses": ["We have exchange partnerships with over 50 universities worldwide. Applications are accepted annually with specific deadlines and requirements."]
+        },
+        {
+            "tag": "internship_program",
+            "patterns": ["Internship opportunities", "How to find internships", "Industry connections"],
+            "responses": ["Our career center maintains a comprehensive internship database. Attend our annual career fair or use our online internship portal to find opportunities."]
+        },
+        {
+            "tag": "mental_health",
+            "patterns": ["Counseling services", "Student mental health support", "Psychological resources"],
+            "responses": ["Confidential counseling services are available free of charge to all enrolled students. Walk-in hours and online consultations are offered."]
+        },
+        {
+            "tag": "student_budget",
+            "patterns": ["Student budget planning", "Financial management", "Cost of living"],
+            "responses": ["We offer financial workshops and resources to help students manage their budget. Check our student services for free financial counseling."]
+        },
+        {
+            "tag": "academic_calendar",
+            "patterns": ["Important academic dates", "Semester schedule", "Academic year timeline"],
+            "responses": ["The full academic calendar is available on our website, detailing semester start/end dates, holidays, and important academic deadlines."]
+        },
+        {
+            "tag": "student_discounts",
+            "patterns": ["Student discount programs", "Affordable student services", "Campus deals"],
+            "responses": ["Students receive discounts on software, local businesses, transportation, and campus services. Your student ID provides access to multiple discount programs."]
+        },
+        {
+            "tag": "coding_resources",
+            "patterns": ["Programming resources", "Coding workshops", "Tech skill development"],
+            "responses": ["We offer coding bootcamps, weekly programming workshops, and access to online learning platforms like Codecademy and Coursera."]
+        },
+        {
+            "tag": "lab_access",
+            "patterns": ["Computer lab hours", "Lab equipment", "Technology resources"],
+            "responses": ["Computer labs are open 24/7 with keycard access for enrolled students. High-performance computing resources are available for specialized projects."]
+        },
+        {
+            "tag": "accessibility_services",
+            "patterns": ["Disability support", "Accommodations for students", "Special learning needs"],
+            "responses": ["Our accessibility services provide comprehensive support, including assistive technologies, alternative testing arrangements, and personalized academic accommodations."]
+        },
+        {
+            "tag": "student_events",
+            "patterns": ["Campus events", "Student activities", "Social gatherings"],
+            "responses": ["We host weekly events including tech talks, cultural festivals, career workshops, and social mixers. Check the student activities calendar for upcoming events."]
+        },
+        {
+            "tag": "academic_integrity",
+            "patterns": ["Plagiarism policy", "Academic honesty", "Citation guidelines"],
+            "responses": ["We maintain strict academic integrity standards. All students must complete an academic honesty workshop and understand citation guidelines."]
+        },
+        {
+            "tag": "networking",
+            "patterns": ["Professional networking", "Alumni connections", "Industry meetups"],
+            "responses": ["Our alumni network provides mentorship programs, industry connections, and networking events to support student career development."]
+        },
+        {
+            "tag": "startup_incubator",
+            "patterns": ["Student startup support", "Entrepreneurship program", "Business innovation"],
+            "responses": ["Our startup incubator offers funding, mentorship, and resources for student entrepreneurs to develop and launch innovative tech solutions."]
+        },
+        {
+            "tag": "sustainability",
+            "patterns": ["Campus sustainability", "Green initiatives", "Environmental programs"],
+            "responses": ["We're committed to sustainability through green campus initiatives, recycling programs, and sustainability-focused student organizations."]
+        },
+        {
+            "tag": "cloud_computing",
+            "patterns": ["Cloud computing resources", "AWS training", "Cloud certification", "Azure services"],
+            "responses": ["We offer specialized cloud computing courses covering AWS, Azure, and Google Cloud platforms. Students can earn industry-recognized certifications through our program."]
+        },
+        {
+            "tag": "cybersecurity",
+            "patterns": ["Cybersecurity training", "Ethical hacking courses", "Network security", "Information security"],
+            "responses": ["Our cybersecurity program provides hands-on training in ethical hacking, network defense, and advanced security protocols. We partner with industry leaders for real-world experience."]
+        },
+        {
+            "tag": "ai_ml_resources",
+            "patterns": ["Machine learning courses", "AI training", "Deep learning resources", "Data science programs"],
+            "responses": ["We offer comprehensive AI and machine learning courses, including Python programming, neural networks, and advanced data science techniques."]
+        },
+        {
+            "tag": "blockchain_tech",
+            "patterns": ["Blockchain courses", "Cryptocurrency technology", "Smart contract development"],
+            "responses": ["Our blockchain technology program covers cryptocurrency, smart contract development, and distributed ledger technologies. Students can participate in blockchain innovation labs."]
+        },
+        {
+            "tag": "software_development",
+            "patterns": ["Software engineering tracks", "Programming languages", "Development methodologies"],
+            "responses": ["We offer specialized tracks in full-stack development, mobile app development, and software engineering with expertise in multiple programming languages."]
+        },
+        {
+            "tag": "data_analytics",
+            "patterns": ["Data analysis courses", "Business intelligence", "Statistical analysis tools"],
+            "responses": ["Our data analytics program provides training in advanced statistical analysis, data visualization, and business intelligence using tools like Python, R, and Tableau."]
+        },
+        {
+            "tag": "quantum_computing",
+            "patterns": ["Quantum computing research", "Quantum programming", "Advanced computing technologies"],
+            "responses": ["We have a dedicated quantum computing research center offering advanced courses and research opportunities in emerging quantum technologies."]
+        },
+        {
+            "tag": "iot_technologies",
+            "patterns": ["Internet of Things courses", "IoT development", "Smart device programming"],
+            "responses": ["Our IoT program covers embedded systems, sensor networks, and smart device development with hands-on laboratory experiences."]
+        },
+        {
+            "tag": "robotics_program",
+            "patterns": ["Robotics engineering", "Autonomous systems", "Robot programming"],
+            "responses": ["Students can explore robotics through our comprehensive program, including autonomous systems design, robotic process automation, and AI-driven robotics."]
+        },
+        {
+            "tag": "augmented_reality",
+            "patterns": ["AR development", "Virtual reality courses", "Mixed reality technologies"],
+            "responses": ["We offer specialized courses in augmented and virtual reality development, covering Unity, Unreal Engine, and advanced AR/VR programming techniques."]
+        },
+        {
+            "tag": "network_engineering",
+            "patterns": ["Network design", "Cisco certifications", "Network infrastructure"],
+            "responses": ["Our network engineering track provides comprehensive training in network design, security, and infrastructure with pathways to Cisco certifications."]
+        },
+        {
+            "tag": "mobile_development",
+            "patterns": ["iOS development", "Android programming", "Cross-platform app development"],
+            "responses": ["Students can specialize in mobile app development, learning iOS, Android, and cross-platform development using Swift, Kotlin, and React Native."]
+        },
+        {
+            "tag": "big_data",
+            "patterns": ["Big data technologies", "Hadoop", "Spark", "Data engineering"],
+            "responses": ["Our big data program covers advanced data processing technologies, including Hadoop, Apache Spark, and distributed computing architectures."]
+        },
+        {
+            "tag": "digital_forensics",
+            "patterns": ["Cyber forensics", "Digital investigation", "Forensic technology"],
+            "responses": ["We offer specialized courses in digital forensics, covering computer crime investigation, evidence collection, and forensic analysis techniques."]
+        },
+        {
+            "tag": "game_development",
+            "patterns": ["Game design courses", "Game programming", "Game engine development"],
+            "responses": ["Our game development program provides comprehensive training in game design, Unity and Unreal Engine development, and interactive media technologies."]
+        },
+        {
+            "tag": "devops_engineering",
+            "patterns": ["DevOps practices", "Continuous integration", "Cloud deployment"],
+            "responses": ["Students learn advanced DevOps methodologies, including continuous integration, cloud deployment, and infrastructure as code using tools like Jenkins and Docker."]
+        },
+        {
+            "tag": "embedded_systems",
+            "patterns": ["Embedded software", "Microcontroller programming", "Hardware design"],
+            "responses": ["Our embedded systems track covers microcontroller programming, hardware design, and real-time operating systems for advanced technical applications."]
+        },
+        {
+            "tag": "natural_language_processing",
+            "patterns": ["NLP courses", "Computational linguistics", "AI language models"],
+            "responses": ["We offer specialized courses in natural language processing, covering machine translation, sentiment analysis, and advanced AI language technologies."]
+        },
+        {
+            "tag": "renewable_tech",
+            "patterns": ["Green technology", "Sustainable computing", "Energy-efficient systems"],
+            "responses": ["Our renewable technology program explores sustainable computing, energy-efficient system design, and innovative green technology solutions."]
+        },
+        {
+            "tag": "digital_marketing_tech",
+            "patterns": ["Digital marketing technologies", "Marketing analytics", "SEO tools"],
+            "responses": ["Students can learn advanced digital marketing technologies, including SEO, data-driven marketing strategies, and cutting-edge marketing analytics tools."]
+        },
+        {
+            "tag": "research_methodology",
+            "patterns": ["Research methods in IT", "Academic research techniques", "Scientific research guidelines"],
+            "responses": ["We provide comprehensive training in research methodologies, including qualitative and quantitative research techniques specific to information technology and computer science."]
+        },
+        {
+            "tag": "patent_process",
+            "patterns": ["How to file a tech patent", "Intellectual property in IT", "Research commercialization"],
+            "responses": ["Our technology innovation center offers guidance on patent filing, intellectual property protection, and strategies for commercializing technological innovations."]
+        },
+        {
+            "tag": "ethical_hacking",
+            "patterns": ["Ethical hacking certification", "Penetration testing", "Cybersecurity skill development"],
+            "responses": ["We offer comprehensive ethical hacking programs, including certified penetration testing courses and advanced cybersecurity skill development workshops."]
+        },
+        {
+            "tag": "startup_funding",
+            "patterns": ["Tech startup funding", "Innovation grants", "Entrepreneurship support"],
+            "responses": ["Our innovation hub provides startup funding opportunities, including seed grants, venture capital connections, and pitch competition platforms for student entrepreneurs."]
+        },
+        {
+            "tag": "industry_certifications",
+            "patterns": ["IT certification programs", "Professional credentials", "Tech industry certifications"],
+            "responses": ["We offer preparation courses for industry-leading certifications including CompTIA, Cisco CCNA, Microsoft Azure, AWS, and Google Cloud Professional certifications."]
+        },
+        {
+            "tag": "quantum_programming",
+            "patterns": ["Quantum programming languages", "Quantum algorithm development", "Quantum computing research"],
+            "responses": ["Our advanced quantum computing program covers specialized quantum programming languages like Qiskit, Cirq, and Q#, preparing students for cutting-edge research."]
+        },
+        {
+            "tag": "machine_learning_ethics",
+            "patterns": ["AI ethics", "Responsible machine learning", "Ethical AI development"],
+            "responses": ["We provide specialized courses on ethical considerations in AI, covering bias detection, responsible algorithm design, and the societal implications of machine learning technologies."]
+        },
+        {
+            "tag": "advanced_cryptography",
+            "patterns": ["Cryptography techniques", "Encryption technologies", "Advanced security protocols"],
+            "responses": ["Our cryptography program explores advanced encryption techniques, blockchain security, and next-generation secure communication technologies."]
+        },
+        {
+            "tag": "space_tech_innovation",
+            "patterns": ["Space technology courses", "Aerospace computing", "Satellite technology"],
+            "responses": ["We offer specialized courses in space technology, including satellite systems design, aerospace computing, and advanced space exploration technologies."]
+        },
+        {
+            "tag": "bioinformatics",
+            "patterns": ["Computational biology", "Genomic data analysis", "Bioinformatics programming"],
+            "responses": ["Our bioinformatics track combines computer science with biological research, offering advanced courses in genomic data analysis and computational biology."]
+        },
+        {
+            "tag": "autonomous_systems",
+            "patterns": ["Self-driving technology", "Autonomous vehicle programming", "Robotics AI"],
+            "responses": ["Students can explore autonomous systems through our specialized program covering self-driving technologies, robotics AI, and advanced sensor integration."]
+        },
+        {
+            "tag": "climate_tech",
+            "patterns": ["Climate technology", "Environmental computing", "Sustainable tech solutions"],
+            "responses": ["Our climate technology program focuses on developing computational solutions for environmental challenges, including climate modeling and sustainable technology innovations."]
+        },
+        {
+            "tag": "neural_interface",
+            "patterns": ["Brain-computer interfaces", "Neurotechnology", "Advanced human-computer interaction"],
+            "responses": ["We offer cutting-edge research opportunities in neural interface technologies, exploring brain-computer interaction and advanced neurotechnology applications."]
+        },
+        {
+            "tag": "advanced_simulation",
+            "patterns": ["Computer simulation techniques", "Virtual modeling", "Computational physics"],
+            "responses": ["Our advanced simulation program covers complex modeling techniques, including computational physics, scientific visualization, and high-performance computing simulations."]
+        },
+        {
+            "tag": "genetic_algorithms",
+            "patterns": ["Evolutionary computation", "Optimization algorithms", "Genetic programming"],
+            "responses": ["Students can explore advanced genetic algorithm techniques, including evolutionary computation, optimization strategies, and adaptive computational methods."]
+        },
+        {
+            "tag": "digital_forensics_advanced",
+            "patterns": ["Advanced cyber investigation", "Digital evidence analysis", "Forensic technology"],
+            "responses": ["Our advanced digital forensics program provides deep training in cyber investigation, digital evidence analysis, and cutting-edge forensic technology techniques."]
+        },
+        {
+            "tag": "human_computer_interaction",
+            "patterns": ["UX design", "Interactive system design", "User experience research"],
+            "responses": ["We offer comprehensive human-computer interaction courses covering UX design, interactive system development, and advanced user experience research methodologies."]
+        },
+        {
+            "tag": "advanced_networking",
+            "patterns": ["Software-defined networking", "Next-generation network architecture", "Advanced network protocols"],
+            "responses": ["Our advanced networking program explores software-defined networking, next-generation network architectures, and cutting-edge network protocol technologies."]
+        },
+        {
+            "tag": "computational_creativity",
+            "patterns": ["AI creativity", "Generative design", "Creative computing"],
+            "responses": ["Students can explore the intersection of AI and creativity, including generative design, computational creativity, and advanced creative computing techniques."]
+        },
+        {
+            "tag": "advanced_data_visualization",
+            "patterns": ["Data visualization techniques", "Interactive data representation", "Advanced graphical computing"],
+            "responses": ["Our data visualization program covers advanced techniques for representing complex data, including interactive visualization, computational graphics, and immersive data experiences."]
+        },
+        {
+            "tag": "edge_computing",
+            "patterns": ["Edge computing technologies", "IoT edge processing", "Distributed computing architectures"],
+            "responses": ["Our edge computing program explores advanced distributed processing techniques, IoT edge technologies, and real-time computational strategies for next-generation networks."]
+        },
+        {
+            "tag": "ai_ethics_governance",
+            "patterns": ["AI governance", "Ethical AI frameworks", "Responsible technology development"],
+            "responses": ["We offer comprehensive courses on AI ethics, covering global governance frameworks, ethical algorithm design, and responsible technology implementation strategies."]
+        },
+        {
+            "tag": "quantum_machine_learning",
+            "patterns": ["Quantum machine learning", "Quantum AI", "Advanced computational techniques"],
+            "responses": ["Our quantum machine learning track explores cutting-edge intersections between quantum computing and artificial intelligence, providing advanced computational research opportunities."]
+        },
+        {
+            "tag": "digital_twin_technology",
+            "patterns": ["Digital twin development", "Virtual simulation technologies", "Complex system modeling"],
+            "responses": ["Students can explore digital twin technologies, learning advanced simulation techniques for creating comprehensive virtual representations of physical systems and processes."]
+        },
+        {
+            "tag": "neuromorphic_computing",
+            "patterns": ["Brain-inspired computing", "Neuromorphic engineering", "Cognitive computing architectures"],
+            "responses": ["Our neuromorphic computing program investigates brain-inspired computational models, developing advanced cognitive computing architectures and intelligent systems."]
+        },
+        {
+            "tag": "synthetic_biology_tech",
+            "patterns": ["Synthetic biology", "Computational biology", "Genetic engineering technologies"],
+            "responses": ["We offer interdisciplinary courses combining computational technologies with synthetic biology, exploring advanced genetic engineering and biotechnology innovations."]
+        },
+        {
+            "tag": "advanced_cryptography",
+            "patterns": ["Post-quantum cryptography", "Blockchain security", "Advanced encryption techniques"],
+            "responses": ["Our cryptography program covers next-generation encryption technologies, including post-quantum cryptographic methods and advanced blockchain security protocols."]
+        },
+        {
+            "tag": "immersive_technologies",
+            "patterns": ["Extended reality", "Mixed reality development", "Immersive computing"],
+            "responses": ["Students can specialize in immersive technologies, learning advanced development techniques for augmented, virtual, and mixed reality applications."]
+        },
+        {
+            "tag": "autonomous_robotics",
+            "patterns": ["Advanced robotics", "Autonomous system design", "AI-driven robotics"],
+            "responses": ["Our autonomous robotics program provides comprehensive training in advanced robotic system design, machine learning integration, and intelligent autonomous technologies."]
+        },
+        {
+            "tag": "sustainable_computing",
+            "patterns": ["Green computing", "Energy-efficient technologies", "Sustainable IT solutions"],
+            "responses": ["We focus on sustainable computing strategies, exploring energy-efficient technologies and innovative solutions for reducing technological environmental impact."]
+        },
+        {
+            "tag": "advanced_data_science",
+            "patterns": ["Predictive analytics", "Advanced statistical modeling", "Complex data interpretation"],
+            "responses": ["Our advanced data science track covers sophisticated predictive analytics, complex statistical modeling, and cutting-edge data interpretation techniques."]
+        },
+        {
+            "tag": "cognitive_security",
+            "patterns": ["AI-powered cybersecurity", "Cognitive threat detection", "Advanced security intelligence"],
+            "responses": ["We provide specialized training in cognitive security, exploring AI-driven threat detection and advanced intelligent security technologies."]
+        },
+        {
+            "tag": "human_augmentation_tech",
+            "patterns": ["Human augmentation", "Wearable technologies", "Cognitive enhancement"],
+            "responses": ["Our human augmentation program investigates emerging technologies that enhance human cognitive and physical capabilities through advanced technological interventions."]
+        },
+        {
+            "tag": "advanced_natural_language_processing",
+            "patterns": ["Multilingual AI", "Advanced language models", "Semantic understanding technologies"],
+            "responses": ["Students explore advanced NLP technologies, including multilingual AI, sophisticated language models, and complex semantic understanding techniques."]
+        },
+        {
+            "tag": "space_computing",
+            "patterns": ["Space technology computing", "Aerospace data systems", "Extraterrestrial computing challenges"],
+            "responses": ["Our space computing program addresses unique computational challenges in aerospace technologies, exploring advanced data systems for space exploration."]
+        },
+        {
+            "tag": "regenerative_ai",
+            "patterns": ["Self-healing systems", "Adaptive AI", "Regenerative computational models"],
+            "responses": ["We investigate regenerative AI technologies, focusing on self-healing computational systems and adaptive artificial intelligence architectures."]
+        },
+        {
+            "tag": "advanced_computational_chemistry",
+            "patterns": ["Molecular simulation", "Computational chemistry technologies", "Advanced chemical modeling"],
+            "responses": ["Our computational chemistry track combines advanced computing technologies with molecular simulation and sophisticated chemical modeling techniques."]
+        },
+        {
+            "tag": "intelligent_infrastructure",
+            "patterns": ["Smart city technologies", "Intelligent urban systems", "Advanced infrastructure computing"],
+            "responses": ["Students explore intelligent infrastructure technologies, developing computational solutions for smart cities and advanced urban system management."]
+        },
+        {
+            "tag": "quantum_communication",
+            "patterns": ["Quantum communication networks", "Quantum internet", "Secure quantum communication"],
+            "responses": ["Our quantum communication program investigates advanced quantum networking technologies, exploring secure communication methods and quantum internet development."]
+        },
+        {
+            "tag": "emergent_ai_systems",
+            "patterns": ["Complex AI systems", "Emergent artificial intelligence", "Self-organizing computational models"],
+            "responses": ["We research emergent AI systems, exploring complex computational models that demonstrate adaptive and self-organizing artificial intelligence capabilities."]
+        },
+        {
+            "tag": "software_engineering_principles",
+            "patterns": ["Software design patterns", "SOLID principles", "Agile methodologies"],
+            "responses": ["Our software engineering courses cover advanced design patterns, SOLID principles, and various agile methodologies to prepare students for professional software development."]
+        },
+        {
+            "tag": "database_management",
+            "patterns": ["Database design", "SQL vs NoSQL", "Data modeling"],
+            "responses": ["We offer comprehensive database management courses covering relational and non-relational databases, advanced data modeling techniques, and database optimization strategies."]
+        },
+        {
+            "tag": "web_development",
+            "patterns": ["Frontend frameworks", "Backend technologies", "Full-stack development"],
+            "responses": ["Our web development track includes training in modern frontend frameworks, backend technologies, and full-stack development practices using the latest industry standards."]
+        },
+        {
+            "tag": "computer_networks",
+            "patterns": ["Network protocols", "TCP/IP", "Network security"],
+            "responses": ["Students learn about various network protocols, TCP/IP architecture, and network security practices in our comprehensive computer networking courses."]
+        },
+        {
+            "tag": "operating_systems",
+            "patterns": ["OS design", "Kernel development", "System programming"],
+            "responses": ["Our operating systems courses delve into OS design principles, kernel development, and low-level system programming to give students a deep understanding of computer systems."]
+        },
+        {
+            "tag": "computer_graphics",
+            "patterns": ["3D rendering", "Graphics programming", "Visualization techniques"],
+            "responses": ["The computer graphics program covers 3D rendering algorithms, graphics programming using OpenGL and DirectX, and advanced visualization techniques."]
+        },
+        {
+            "tag": "parallel_computing",
+            "patterns": ["Parallel algorithms", "GPU programming", "Distributed systems"],
+            "responses": ["We offer courses in parallel computing, covering parallel algorithm design, GPU programming with CUDA, and distributed system architectures."]
+        },
+        {
+            "tag": "compiler_design",
+            "patterns": ["Lexical analysis", "Parsing techniques", "Code optimization"],
+            "responses": ["Our compiler design courses cover the entire compilation process, including lexical analysis, parsing techniques, and code optimization strategies."]
+        },
+        {
+            "tag": "computer_vision",
+            "patterns": ["Image processing", "Object recognition", "Visual SLAM"],
+            "responses": ["The computer vision program includes advanced image processing techniques, object recognition algorithms, and visual simultaneous localization and mapping (SLAM)."]
+        },
+        {
+            "tag": "information_retrieval",
+            "patterns": ["Search algorithms", "Text mining", "Recommendation systems"],
+            "responses": ["Students learn about search algorithms, text mining techniques, and the design of recommendation systems in our information retrieval courses."]
+        },
+        {
+            "tag": "cloud_computing",
+            "patterns": ["Cloud architectures", "Virtualization", "Containerization"],
+            "responses": ["Our cloud computing courses cover various cloud architectures, virtualization technologies, and containerization using tools like Docker and Kubernetes."]
+        },
+        {
+            "tag": "mobile_app_development",
+            "patterns": ["iOS development", "Android programming", "Cross-platform frameworks"],
+            "responses": ["We offer comprehensive mobile app development courses covering iOS and Android native development, as well as cross-platform frameworks like React Native and Flutter."]
+        },
+        {
+            "tag": "functional_programming",
+            "patterns": ["Haskell", "Scala", "Functional paradigms"],
+            "responses": ["Our functional programming courses introduce students to languages like Haskell and Scala, and explore functional programming paradigms and their applications."]
+        },
+        {
+            "tag": "game_development",
+            "patterns": ["Game engines", "3D game programming", "Game AI"],
+            "responses": ["The game development track covers popular game engines like Unity and Unreal, 3D game programming techniques, and implementation of game AI algorithms."]
+        },
+        {
+            "tag": "embedded_systems",
+            "patterns": ["Microcontroller programming", "RTOS", "IoT devices"],
+            "responses": ["Our embedded systems courses focus on microcontroller programming, real-time operating systems (RTOS), and development of IoT devices."]
+        },
+        {
+            "tag": "formal_methods",
+            "patterns": ["Formal verification", "Model checking", "Theorem proving"],
+            "responses": ["We offer advanced courses in formal methods, covering formal verification techniques, model checking, and automated theorem proving for software and hardware systems."]
+        },
+        {
+            "tag": "human_computer_interaction",
+            "patterns": ["UI/UX design", "Usability testing", "Interaction design"],
+            "responses": ["Our HCI program covers UI/UX design principles, usability testing methodologies, and advanced interaction design techniques for various platforms."]
+        },
+        {
+            "tag": "computer_architecture",
+            "patterns": ["Processor design", "Memory hierarchy", "Instruction set architectures"],
+            "responses": ["Students learn about processor design, memory hierarchies, and various instruction set architectures in our comprehensive computer architecture courses."]
+        },
+        {
+            "tag": "data_mining",
+            "patterns": ["Association rules", "Clustering algorithms", "Anomaly detection"],
+            "responses": ["Our data mining courses cover association rule learning, various clustering algorithms, and techniques for anomaly detection in large datasets."]
+        },
+        {
+            "tag": "natural_language_processing",
+            "patterns": ["Text classification", "Sentiment analysis", "Machine translation"],
+            "responses": ["The NLP program includes advanced topics like text classification, sentiment analysis, and machine translation using state-of-the-art deep learning techniques."]
+        },
+        {
+            "tag": "blockchain_technology",
+            "patterns": ["Distributed ledgers", "Smart contracts", "Cryptocurrency"],
+            "responses": ["We offer courses on blockchain technology, covering distributed ledger systems, smart contract development, and the underlying principles of cryptocurrencies."]
+        },
+        {
+            "tag": "quantum_computing",
+            "patterns": ["Quantum algorithms", "Quantum circuits", "Quantum error correction"],
+            "responses": ["Our quantum computing courses introduce quantum algorithms, quantum circuit design, and quantum error correction techniques using frameworks like Qiskit."]
+        },
+        {
+            "tag": "bioinformatics",
+            "patterns": ["Sequence alignment", "Phylogenetics", "Genomic data analysis"],
+            "responses": ["The bioinformatics program covers sequence alignment algorithms, phylogenetic tree construction, and advanced techniques for genomic data analysis."]
+        },
+        {
+            "tag": "robotics",
+            "patterns": ["Robot kinematics", "Path planning", "Computer vision for robotics"],
+            "responses": ["Our robotics courses cover robot kinematics, path planning algorithms, and the integration of computer vision techniques in robotic systems."]
+        },
+        {
+            "tag": "cybersecurity",
+            "patterns": ["Cryptography", "Network security", "Ethical hacking"],
+            "responses": ["The cybersecurity program includes courses on cryptography, network security protocols, and ethical hacking techniques to prepare students for security challenges."]
+        },
+        {
+            "tag": "augmented_reality",
+            "patterns": ["AR development", "Spatial computing", "AR user interfaces"],
+            "responses": ["We offer courses in augmented reality development, covering spatial computing concepts and design of AR user interfaces using platforms like ARKit and ARCore."]
+        },
+        {
+            "tag": "high_performance_computing",
+            "patterns": ["Supercomputing", "Cluster computing", "Performance optimization"],
+            "responses": ["Our high-performance computing courses cover supercomputing architectures, cluster computing techniques, and advanced performance optimization strategies."]
+        },
+        {
+            "tag": "computational_linguistics",
+            "patterns": ["Language modeling", "Syntactic parsing", "Discourse analysis"],
+            "responses": ["The computational linguistics program includes advanced language modeling techniques, syntactic parsing algorithms, and methods for discourse analysis."]
+        },
+        {
+            "tag": "software_testing",
+            "patterns": ["Unit testing", "Integration testing", "Test-driven development"],
+            "responses": ["We offer comprehensive software testing courses covering unit testing, integration testing strategies, and the principles of test-driven development."]
+        },
+        {
+            "tag": "digital_signal_processing",
+            "patterns": ["Signal analysis", "Filter design", "Audio processing"],
+            "responses": ["Our digital signal processing courses cover signal analysis techniques, digital filter design, and applications in areas such as audio and image processing."]
+        }
+    ]
+}

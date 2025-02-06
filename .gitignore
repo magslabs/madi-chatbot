@@ -1,0 +1,5 @@
+madi_chatbot_api/venv
+madi_chatbot_api/api/__pycache__
+madi_chatbot_api/chatbot/__pycache__
+madi_chatbot_api/madi_chatbot/__pycache__
+madi_chatbot_ui/node_modules
