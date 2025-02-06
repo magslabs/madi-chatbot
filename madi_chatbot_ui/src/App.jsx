@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Send } from "lucide-react";
 
 function App() {
@@ -7,6 +7,31 @@ function App() {
   ]);
   const [input, setInput] = useState("");
   const [isTyping, setIsTyping] = useState(false);
+
+  // Initialize the chatbot when the component mounts
+  useEffect(() => {
+    const initializeChatbot = async () => {
+      try {
+        const response = await fetch("http://127.0.0.1:8000/api/chatbot/initialize", {
+          method: "GET"
+        });
+  
+        if (!response.ok) {
+          throw new Error("Failed to initialize chatbot");
+        }
+  
+        console.log("Chatbot initialized successfully");
+      } catch (error) {
+        console.error("Error initializing chatbot:", error);
+        setMessages((prev) => [
+          ...prev,
+          { text: "Failed to initialize chatbot. Please try again later.", sender: "bot" }
+        ]);
+      }
+    };
+  
+    initializeChatbot();
+  }, []);
 
   const sendMessage = async () => {
     if (!input.trim()) return;
@@ -68,15 +93,16 @@ function App() {
         </div>
         <div className="p-4 border-t bg-white flex items-center gap-2 rounded-b-lg">
           <input
-            className="flex-1 p-2 border rounded-lg"
+            className="flex-1 p-3 border rounded-lg"
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Type a message..."
             onKeyDown={(e) => e.key === "Enter" && sendMessage()}
           />
-          <button onClick={sendMessage} className="p-2 bg-pink-500 text-white rounded-lg">
+          <button onClick={sendMessage} className="p-3 bg-pink-500 text-white rounded-lg flex items-center gap-2">
             <Send className="h-5 w-5" />
-          </button>
+            <span>Send</span>
+          </button> 
         </div>
       </div>
     </div>
